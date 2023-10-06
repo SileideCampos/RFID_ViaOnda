@@ -1,0 +1,56 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Servidor RFID'
+  ClientHeight = 296
+  ClientWidth = 323
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 0
+  object mLog: TMemo
+    Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+    DataDetectorTypes = []
+    Align = Client
+    Size.Width = 323.000000000000000000
+    Size.Height = 246.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    Viewport.Width = 323.000000000000000000
+    Viewport.Height = 246.000000000000000000
+  end
+  object Layout1: TLayout
+    Align = Top
+    Size.Width = 323.000000000000000000
+    Size.Height = 50.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 5
+    object edtPort: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      Align = Client
+      TabOrder = 4
+      Size.Width = 192.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      TextPrompt = 'Porta'
+    end
+    object btnServerOn: TButton
+      Align = Right
+      Position.X = 192.000000000000000000
+      Size.Width = 131.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      Text = 'Ativar Servidor'
+      TextSettings.Trimming = None
+      OnClick = btnServerOnClick
+    end
+  end
+  object TCPServer: TIdTCPServer
+    Bindings = <>
+    DefaultPort = 0
+    Left = 80
+    Top = 96
+  end
+end
